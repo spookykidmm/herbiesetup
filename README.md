@@ -5,7 +5,7 @@ It is heavily "inspired"(stolen) by the configs that sit at https://github.com/v
 Dependencies include:
 
 dzen2
-My statusbar at https://github.com/spookykidmm/spookybar
+My statusbar at https://gitlab.com/spookykidmm/spookybar
 clipmenu
 rofi
 terminator
