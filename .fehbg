@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale 'https://source.unsplash.com/1366x768/?nature,mountain' 

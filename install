@@ -1,0 +1,2 @@
+#!/bin/sh
+yay -S herbstluftwm-winterbreeze-git aurutils light pamixer clipmenu compton feh dunst dzen2 oblogout-fork-git rofi acpi
