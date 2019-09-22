@@ -14,5 +14,5 @@ pamixer
 feh
 compton
 oblogout-fork-git
-
-The "install" script will help you get it all set up(more like my system)
+wireless_tools
+acpi
