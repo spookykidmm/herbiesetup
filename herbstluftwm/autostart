@@ -118,8 +118,10 @@ keybind $MOD-u               jumpto urgent
 # Rules.
 hc rule focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
-hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
+hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on floating=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+hc rule class=Oblogout fullscreen=on
+hc rule class=Engrampa fullscreen=on
 #hc rule instance=gl  pseudotile=on
 
 
@@ -163,16 +165,17 @@ hc set mouse_recenter_gap           0
 hc set tree_style '╾│ ├└╼─┐'
 
 # App Launch
-hc keybind $MOD-d spawn rofi -show drun
-hc keybind $MOD-t spawn rofi -show run
-hc keybind $MOD-F7 spawn light -A 10.00
-hc keybind $MOD-F6 spawn light -U 10.00
-hc keybind $MOD-Return spawn terminator
-hc keybind XF86AudioRaiseVolume spawn pamixer -i 10.00
-hc keybind XF86AudioLowerVolume spawn pamixer -d 10.00
-hc keybind $MOD-Delete spawn oblogout
-keybind $MOD-Shift-q close
-hc keybind $MOD-p spawn clipmenu
+hc keybind $MOD-d 						spawn rofi -show drun
+hc keybind $MOD-t 						spawn rofi -show run
+hc keybind $MOD-F7 						spawn light -A 10.00
+hc keybind $MOD-F6 						spawn light -U 10.00
+hc keybind $MOD-Return 					spawn terminator
+hc keybind XF86AudioRaiseVolume 		spawn pamixer -i 10
+hc keybind XF86AudioLowerVolume 		spawn pamixer -d 10
+hc keybind XF86AudioMute				spawn pamixer -t
+hc keybind $MOD-Delete 					spawn oblogout
+keybind $MOD-Shift-q 					close
+hc keybind $MOD-p 						spawn clipmenu
 ##
 # Host specific config
 ##
