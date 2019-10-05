@@ -169,7 +169,7 @@ hc keybind $MOD-d 						spawn rofi -show drun
 hc keybind $MOD-t 						spawn rofi -show run
 hc keybind $MOD-F7 						spawn light -A 10.00
 hc keybind $MOD-F6 						spawn light -U 10.00
-hc keybind $MOD-Return 					spawn terminator
+hc keybind $MOD-Return 					spawn tilix
 hc keybind XF86AudioRaiseVolume 		spawn pamixer -i 10
 hc keybind XF86AudioLowerVolume 		spawn pamixer -d 10
 hc keybind XF86AudioMute				spawn pamixer -t
@@ -197,8 +197,9 @@ hc unlock
 hc_run_chain
 
 #autostart
-sh ~/.fehbg &
-compton -b &
 sh spookybar/spookybar &
+compton -b &
 light -S 10.00 &
 clipmenud &
+~/.fehbg &
+/usr/bin/lxpolkit &
