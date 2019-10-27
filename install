@@ -1,4 +1,0 @@
-#!/bin/sh
-yay -S git
-git clone https://gitlab.com/spookykidmm/spookybar
-yay -S herbstluftwm-winterbreeze-git wmctrl aurutils light pamixer clipmenu compton feh dunst dzen2 oblogout-fork-git rofi acpi
