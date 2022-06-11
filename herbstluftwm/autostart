@@ -191,7 +191,6 @@ HOST=`hostname`
 
 # Detect monitors.
 hc detect_monitors
-
 # Unlock...
 hc unlock
 
@@ -199,13 +198,4 @@ hc unlock
 hc_run_chain
 
 #autostart
-sleep 3;sh spookybar/spookybar &
-sleep 3;sh ~/scripts/nicolebar.sh &
-compton -b &
-light -S 10.00 &
-clipmenud &
-/usr/bin/lxpolkit &
-~/.fehbg &
-sleep 10;stalonetray -t -i 19 &
-xss-lock -- i3lock-fancy -g -p &
-xset b off &
+sh displaysetup.sh &

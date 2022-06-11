@@ -82,11 +82,12 @@ keybind $MOD-Shift-s			cycle_layout +1 vertical horizontal grid
 keybind $MOD-Shift-v			set_layout vertical
 keybind $MOD-Shift-h			set_layout horizontal
 keybind $MOD-Shift-g			set_layout grid
+keybind $MOD-Alt-f 				attr clients.focus.floating toggle
 
 # Tags.
 # Logic plain stolen from nxll. Many thanks.
-tag_names=( {I,II,III,IV,V,VI,VII} )
-tag_keys=( {1..7} 0 )
+tag_names=( {I,II,III,IV,V,VI,VII,IIX,IX,X} )
+tag_keys=( {1,2,3,4,5,6,7,8,9,0} )
 
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
@@ -129,7 +130,7 @@ hc rule class=Engrampa fullscreen=on
 # More or less stolen from nxll, as well.
 #hc attr theme.tiling.reset         1
 #hc attr theme.floating.reset       1
-hc pad 0 20 0 0 0
+hc pad 0 20 0 20 0
 hc set frame_border_active_color '#222222'
 hc set frame_border_normal_color '#101010'
 hc set frame_bg_normal_color 'transparent'
@@ -170,9 +171,13 @@ hc keybind $MOD-Return 					spawn qterminal
 hc keybind XF86AudioRaiseVolume 		spawn pamixer -i 10
 hc keybind XF86AudioLowerVolume 		spawn pamixer -d 10
 hc keybind XF86AudioMute				spawn pamixer -t
+hc keybind XF86AudioPlay                spawn playerctl play-pause
+hc keybind XF86AudioNext				spawn playerctl next
 hc keybind $MOD-Delete 					spawn oblogout
 keybind $MOD-Shift-q 					close
 hc keybind $MOD-p 						spawn clipmenu
+hc keybind $MOD-Shift-l                 spawn ./herbiecustom.sh
+
 ##
 # Host specific config
 ##
@@ -186,7 +191,6 @@ HOST=`hostname`
 
 # Detect monitors.
 hc detect_monitors
-
 # Unlock...
 hc unlock
 
@@ -194,9 +198,4 @@ hc unlock
 hc_run_chain
 
 #autostart
-sh spookybar/spookybar &
-compton -b &
-light -S 10.00 &
-clipmenud &
-~/.fehbg &
-/usr/bin/lxpolkit &
+sleep 3;sh displaysetup.sh &
